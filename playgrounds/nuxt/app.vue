@@ -1,27 +1,15 @@
 <script setup lang="ts">
-import { useColorMode, useWindowSize } from '@vueuse/core'
-import { onMounted, reactive, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const mounted = ref(false)
-const { width, height } = useWindowSize()
-const color = useColorMode()
 
 onMounted(() => {
   mounted.value = true
 })
-
-const state = reactive({ width, height, color })
-function toggleMode() {
-  state.color = state.color === 'light' ? 'dark' : 'light'
-}
 </script>
 
 <template>
-  <div>{{ state }}</div>
   <div>{{ { mounted } }}</div>
-  <button @click="toggleMode">
-    {{ color }}
-  </button>
 </template>
 
 <style>
