@@ -4,16 +4,6 @@ import _metadata, { categories as _categories, functions as _functions, packages
 const categoriesOrder = [
   'State',
   'Elements',
-  'Browser',
-  'Sensors',
-  'Network',
-  'Animation',
-  'Component',
-  'Watch',
-  'Reactivity',
-  'Array',
-  'Time',
-  'Utilities',
 ]
 
 export const metadata = _metadata as PackageIndexes
