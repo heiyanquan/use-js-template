@@ -32,7 +32,8 @@
     "types:fix": "esno scripts/fix-types.ts",
     "update": "nr -C packages/metadata update && esno scripts/update.ts",
     "update:full": "nr update && nr build:types",
-    "watch": "esno scripts/build.ts --watch"
+    "watch": "esno scripts/build.ts --watch",
+    "clear": "rimraf **/{dist,node_modules}"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.4",
