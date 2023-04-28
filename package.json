@@ -11,7 +11,7 @@
     "build:redirects": "esno scripts/redirects.ts",
     "build:rollup": "cross-env NODE_OPTIONS=\"--max-old-space-size=6144\" rollup -c",
     "build:types": "tsc --emitDeclarationOnly && nr types:fix",
-    "clean": "rimraf dist types packages/*/dist",
+    "clean": "rimraf dist types",
     "dev": "nr update && nr docs",
     "docs": "vue-demi-switch 3 && vitepress dev packages --open",
     "docs:build": "nr update:full && vitepress build packages && nr build:redirects && esno scripts/post-docs.ts",
@@ -33,7 +33,7 @@
     "update": "nr -C packages/metadata update && esno scripts/update.ts",
     "update:full": "nr update && nr build:types",
     "watch": "esno scripts/build.ts --watch",
-    "clear": "rimraf **/{dist,node_modules}"
+    "clear": "rimraf **/dist **/node_modules"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.4",
