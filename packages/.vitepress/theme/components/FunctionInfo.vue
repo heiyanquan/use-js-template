@@ -2,14 +2,12 @@
 import { useTimeAgo } from '@vueuse/core'
 import { computed } from 'vue'
 import { functions } from '@vueuse/metadata'
-import exportSizes from '../../../export-size.json'
 
 const props = defineProps<{ fn: string }>()
 const info = computed(() => functions.find(i => i.name === props.fn))
 const lastUpdated = useTimeAgo(new Date(info.value?.lastUpdated || 0))
 const link = computed(() => `/functions\#category=${encodeURIComponent(info.value!.category!)}`)
 
-const exportSize = exportSizes[info.value!.name as keyof typeof exportSizes]
 function getFunctionLink(fn: string) {
   const info = functions.find(i => i.name === fn)
   return info?.docs?.replace(/https?:\/\/vueuse\.org\//g, '/')
@@ -25,7 +23,6 @@ function getFunctionLink(fn: string) {
     <div opacity="50">
       Export Size
     </div>
-    <div> {{ exportSize }}</div>
     <template v-if="info.package !== 'core' && info.package !== 'shared'">
       <div opacity="50">
         Package

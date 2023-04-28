@@ -93,7 +93,6 @@ export default defineConfig({
       '/add-ons': DefaultSideBar,
       '/ecosystem': DefaultSideBar,
       '/guidelines': DefaultSideBar,
-      '/export-size': DefaultSideBar,
       '/functions': FunctionsSideBar,
       '/core/': FunctionsSideBar,
       '/shared/': FunctionsSideBar,
